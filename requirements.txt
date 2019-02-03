@@ -1,1 +1,3 @@
-hovercraft>=2.6
+#dose not support impress 1.0 (code from github is required)
+#hovercraft>=2.6
+locustio>=0.9.0

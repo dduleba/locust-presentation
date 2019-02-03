@@ -1,6 +1,7 @@
 :title: Pythonowa Szarańcza
-:data-transition-duration: 1500
-:skip-help: true
+
+.. :skip-help: true
+
 :css: css/my.css
 
 
@@ -11,8 +12,9 @@
         :height: 50
 
 
-.. footer::
-    Pythonowa szarańcza - "Hello World"
+.. .. footer::
+
+..    Pythonowa szarańcza - "Hello World"
 
 
 ----
@@ -25,64 +27,93 @@ Pythonowa Szarancza
 Dariusz Duleba
 
 
-
 ----
 
 O mnie
 ======
 
+
 rodzina
 -------
 
-* 10 rok małżeństwa
-* 10 lat synów
-    * Filip i Damian
+    * 10 rok małżeństwa
+    * 2 synów
+        * Filip i Damian
 
 praca
 -----
-* 12 lat pracy
-    * ALU (6)
-    * Genesys (5)
-    * Nokia (1+)
+
+    * 13 rok pracy
+        * ALU (6+)
+        * Genesys (5+)
+        * Nokia (1+)
 
 wolny czas
 ----------
-* jeszcze raz rodzina - masa atrakcji :)
-* sport
-    * pływanie + jazda na rowerze + bieganie = triathlon
-        * 3 starty
-        * 3 rok treningów
+
+    * jeszcze raz rodzina - masa atrakcji :)
+    * sport
+        * pływanie + jazda na rowerze + bieganie = triathlon
+            * 3 starty
+            * 3 rok treningów
+
+.. note::
+    Znaleść info o 10 latach w treningu triathlonowym
+
+    W testach ile lat by nie minęło człowiek cały czas musi nabywać masę nowych doświadczeń
 
 ----
 
-Szarańcza
-=========
+Reklama :)
+==========
 
-An open source load testing tool.
+* Open source'owe narzędzie do testów wydajnościowych
 
-Define user behaviour with **Python** code, and swarm your system with millions of simultaneous users.
+* Umożliwia definicje zachowania użytkownika
 
-Define user behaviour in code
+* Scenariusze użytkownika w kodzie
 
-No need for clunky UIs or bloated XML. Just plain code.
+.. image:: img/logo_python.gif
 
-Distributed & scalable
+* Skalowalny
+    * tysiące użytkowników na jednej maszynie (event-based)
 
-Locust supports running load tests distributed over multiple machines, and can therefore be used to simulate millions of simultaneous users
+* Rozporoszony
+    * uruchomienie na wielu maszynach umożliwia symulowanie miliony równoczesnych użytkowników
 
-Proven & battle tested
+* webowy interfejs
 
-Locust has been used to simulate millions of simultaneous users. Battlelog, the web app for the Battlefield games, is load tested using Locust, so one can really say Locust is Battletested ;).
+.. image:: img/www_screen.png
+        :width: 400
+        :height: 300
 
 ----
 
-Przykłady
-=========
+Instalacja
+==========
 
-.. code:: python
+W celu wyizolowania narzędzi testowego polecam virtualenv
 
-    x = "das"
-    a = x
+.. code-block::
+
+    $ pip install virtualenv
+    $ pip install virtualenvwrapper
+    $ mkvirtualenv -p python3 locust
+
+https://docs.locust.io/en/latest/installation.html
+
+.. code-block::
+
+    $ workon locust
+    (locust)$ pip install locustio
+    (locust)$ locust --help
+
+----
+
+Inny klient
+===========
+
+https://docs.locust.io/en/stable/testing-other-systems.html
 
 ----
 
