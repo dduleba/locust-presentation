@@ -3,6 +3,7 @@
 Presentation and code examples to introduce locust performance tests
 
 
-* Presentation generation lib:
-
-  * https://hovercraft.readthedocs.io/en/latest/
+## references:
+  * [Presentation generation lib - hovercraft](https://hovercraft.readthedocs.io/en/latest/)
+  * [locust](https://locust.io/)
+  * [genetic_webtools](https://github.com/dduleba/genetic_webtools)
