@@ -1,9 +1,14 @@
+import logging
+
 from locust import Locust, TaskSet, task
 
+log = logging.getLogger('my')
+
 class MyTaskSet(TaskSet):
+
     @task
     def my_task(self):
-        print("executing my_task")
+        log.info("executing my_task")
 
 class MyLocust(Locust):
     task_set = MyTaskSet

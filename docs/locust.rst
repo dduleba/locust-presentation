@@ -170,10 +170,38 @@ Dokumentacja locustfile_
 
 ----
 
-Hosts
-=====
+Weight
+======
 
-TODO: add content :)
+.. code-block:: python
+
+    class WebUserLocust(Locust):
+        weight = 9
+    ...
+
+    class MobileUserLocust(Locust):
+        weight = 1
+    ...
+
+
+Command line run:
+
+.. code-block:: sh
+
+    $ locust -f locustfile_weight.py --no-web --client 20 --hatch 20
+
+.. code-block:: sh
+
+    $ locust -f locustfile_weight.py --no-web --client 20 --hatch 20 MobileUserLocus
+
+
+
+
+----
+
+Host
+====
+
 
 ----
 
