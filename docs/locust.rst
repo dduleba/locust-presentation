@@ -156,7 +156,7 @@ locust_local_url_
 
 Dokumentacja locustfile_
 
-.. _locustfile: https://docs.locust.io/en/stable/writing-a-locustfile.html
+
 
 .. note::
 
@@ -194,14 +194,35 @@ Command line run:
 
     $ locust -f locustfile_weight.py --no-web --client 20 --hatch 20 MobileUserLocus
 
+----
 
+Test App
+========
+
+We will use flask flaskr_ example
+
+.. code-block:: sh
+
+    $ export FLASK_APP=flaskr
+    $ export FLASK_ENV=development
+    $ flask init-db
+    $ flask run
+
+
+.. image:: img/flaskr.gif
 
 
 ----
 
-Host
+TODO
 ====
 
+* Host attribute
+* Task Set class
+* tasks declaration
+* tasks attribute
+
+* create docker for flaskr http://containertutorials.com/docker-compose/flask-simple-app.html
 
 ----
 
@@ -222,6 +243,9 @@ Zarządzanie virtualnymi środowiskami virtualenvwrapper_
 Biblioteka do generowania prezentacji hovercraft_
 
 .. _hovercraft: https://hovercraft.readthedocs.io/en/latest/presentations.html
-.. _locust: https://locust.io/
+
 .. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.io/en/latest/
+.. _locust: https://locust.io/
+.. _locustfile: https://docs.locust.io/en/stable/writing-a-locustfile.html
 .. _locust_local_url: http://localhost:8089/
+.. _flaskr: http://flask.pocoo.org/docs/1.0/tutorial/

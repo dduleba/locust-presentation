@@ -10,12 +10,12 @@ if __name__ == '__main__':
             '-f',
             # Hello world example
 
-            # os.path.join(os.path.dirname(__file__), '..', 'locustfile_hello_world.py'),
+            os.path.join(os.path.dirname(__file__), 'locustfile_hello_world.py'),
 
             # Weight example
 
-            os.path.join(os.path.dirname(__file__), '..', 'locustfile_weight.py'),
-            'MobileUserLocust',
+            # os.path.join(os.path.dirname(__file__), 'locustfile_weight.py'),
+            # 'MobileUserLocust',
 
             # run parameters
             '--no-web',
