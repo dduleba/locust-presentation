@@ -12,6 +12,7 @@ if __name__ == '__main__':
 
             # os.path.join(os.path.dirname(__file__), 'locustfile_index.py'),
             # os.path.join(os.path.dirname(__file__), 'locustfile_register.py'),
+            os.path.join(os.path.dirname(__file__), 'locustfile_logged.py'),
 
             # Weight example
 
@@ -21,7 +22,7 @@ if __name__ == '__main__':
             # run parameters
             '--print-stats'
             # '--no-web',
-            # '--clients=20',
+            # '--clients=2',
             # '--hatch=10'
             # '--help'
         ]

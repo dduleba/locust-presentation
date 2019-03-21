@@ -57,20 +57,6 @@ wolny czas
             * 3 starty
             * 3 rok treningów
 
-.. note::
-
-    Joe Friel - Triathlon biblia treningu
-
-    * ~ 7 lat na doskonalenie umiejętności (aspekty fizyczne)
-    * przez kolejne 3 lata lub więcej nadal poprawiają wyniki (aspekty psychiczne)
-        * doświadczenie
-        * znajomość reguł treningu
-        * występowania w zawodach
-        * tryb życia
-
-    Znaleść info o 10 latach w treningu triathlonowym
-
-    W testach ile lat by nie minęło człowiek cały czas musi nabywać masę nowych doświadczeń
 
 ----
 
@@ -129,9 +115,6 @@ oficjalna dokumentacja instalacji_
 
 .. _instalacji: https://docs.locust.io/en/latest/installation.html
 
-.. note::
-
-    W razie problemów istnieją binarne paczki dla windows'a
 
 ----
 
@@ -156,17 +139,6 @@ locust_local_url_
 
 Dokumentacja locustfile_
 
-
-
-.. note::
-
-    locustfile - zwykły plik pythonowy który musi zawierać przynajmniej jedną class'e dziedziczącą z class'y Locust
-
-    Locust class - reprezentuje jednego urzytkownika - locust utworzy jedną instacje class'y dla każdego symulowanego urzytkownika
-
-    task_set attribute - powinien wskazywać na klase TaskSet definiującą zachowanie urzytkownika
-
-    min_wait and max_wait attribute - symuluje czas oczekiwania urzytkownika pomiędzy akcjiami [ms] - default value 1000
 
 ----
 
@@ -199,7 +171,8 @@ Command line run:
 Test App
 ========
 
-We will use flask flaskr_ example
+flask flaskr_ example
+---------------------
 
 .. code-block:: sh
 
@@ -210,6 +183,74 @@ We will use flask flaskr_ example
 
 
 .. image:: img/flaskr.gif
+
+----
+
+Wstęp do testowania aplikacji
+=============================
+
+Requests_ - HTTP dla ludzi
+--------------------------
+
+.. code-block:: Python
+
+    from random import random
+
+    import requests
+
+    # Pobranie głównej strony
+
+    r = requests.get('http://localhost:5000/')
+    print(r.status_code)
+    print(r.content)
+
+    # rejestracja użytkownika - HTTP post request
+    user_id = random()
+    username = 'test_user_{}'.format(user_id)
+    userpassword = 'test_user_pass_{}'.format(user_id)
+    r = requests.post('http://localhost:5000/auth/register',
+                      data={'username': username,
+                            'password': userpassword})
+    print(r.status_code)
+
+    # logowanie
+    session = requests.Session()
+
+    r = session.post('http://localhost:5000/auth/login',
+                     data={'username': username,
+                           'password': userpassword})
+    print(r.status_code)
+    print(session.cookies)
+
+
+----
+
+Get request
+===========
+
+locust_host_attribute_
+
+locust_usng_HTTP_client_
+
+Każda instancja TaskSet'a (HTTPLocust'a) zawiera atrybut client HttpSession. Klasa HttpSession dziedziczy z requests.Session
+
+
+.. code-block:: Python
+
+    from locust import HttpLocust, TaskSet, task
+
+    class IndexTaskSet(TaskSet):
+        @task()
+        def index(self):
+            self.client.get("/")
+
+
+    class IndexLocust(HttpLocust):
+        task_set = IndexTaskSet
+        min_wait = 5000
+        max_wait = 5000
+        host='http://127.0.0.1:5000'
+
 
 
 ----
@@ -248,4 +289,7 @@ Biblioteka do generowania prezentacji hovercraft_
 .. _locust: https://locust.io/
 .. _locustfile: https://docs.locust.io/en/stable/writing-a-locustfile.html
 .. _locust_local_url: http://localhost:8089/
+.. _locust_host_attribute: https://docs.locust.io/en/stable/writing-a-locustfile.html#the-host-attribute
+.. _locust_usng_HTTP_client: https://docs.locust.io/en/stable/writing-a-locustfile.html#using-the-http-client
 .. _flaskr: http://flask.pocoo.org/docs/1.0/tutorial/
+.. _Requests: http://docs.python-requests.org/en/master/user/quickstart/
