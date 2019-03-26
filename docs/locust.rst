@@ -252,23 +252,147 @@ Każda instancja TaskSet'a (HTTPLocust'a) zawiera atrybut client HttpSession. Kl
         host='http://127.0.0.1:5000'
 
 
+----
+
+Post request
+============
+
+.. code-block:: Python
+
+    from locust import HttpLocust, TaskSet, task
+
+
+    class RegisterTaskSet(TaskSet):
+
+        def on_start(self):
+            self.prefix = id(self)
+            self.user_id = 0
+            print(self.prefix)
+
+        @task()
+        def register(self):
+            self.user_id += 1
+            self.client.post(
+                "/auth/register",
+                data={
+                    'username': 'test_user_{}_{}'.format(self.prefix, self.user_id),
+                    'password': 'test_password_{}_{}'.format(self.prefix, self.user_id)
+                }
+            )
+
+
+    class IndexLocust(HttpLocust):
+        task_set = RegisterTaskSet
+        min_wait = 5000
+        max_wait = 5000
+        host = 'http://127.0.0.1:5000'
+
 
 ----
 
-TODO
-====
+Task sequence
+=============
 
-* Host attribute
-* Task Set class
-* tasks declaration
-* tasks attribute
+.. code-block:: Python
 
-* create docker for flaskr http://containertutorials.com/docker-compose/flask-simple-app.html
+    import time
+
+    from locust import HttpLocust, task, TaskSequence, seq_task
+
+
+    class LoggedUserSequence(TaskSequence):
+
+        def on_start(self):
+            self.prefix = id(self)
+            self.user_id = 0
+            print(self.prefix)
+            self.user_name = 'test_user_{}_{}'.format(self.prefix, self.user_id)
+            self.user_password = 'test_password_{}_{}'.format(self.prefix, self.user_id)
+            self.client.post(
+                "/auth/register",
+                data={
+                    'username': self.user_name,
+                    'password': self.user_password
+                }
+            )
+
+        @seq_task(1)
+        def login(self):
+            self.client.post(
+                "/auth/login",
+                data={
+                    'username': self.user_name,
+                    'password': self.user_password
+                }
+            )
+
+        @seq_task(2)
+        @task(5)
+        def new(self):
+            self.client.post(
+                "/create",
+                data={
+                    'title': '{}: {} title'.format(self.user_name, self.user_id),
+                    'body': "my body text"
+                }
+            )
+
+    ...
 
 ----
 
-Inny klient
-===========
+Flaskr w docker'ze
+==================
+
+.. code-block:: Docker
+
+    FROM ubuntu:latest
+    RUN apt-get update -y
+    RUN apt-get install -y python-pip python-dev build-essential
+
+    ADD . /app
+    WORKDIR /app
+    RUN pip install -e .
+    ENV FLASK_APP flaskr
+    ENV FLASK_ENV development
+    RUN flask init-db
+
+    ENTRYPOINT ["flask"]
+    CMD ["run","--host","0.0.0.0"]
+
+.. code-block:: bash
+
+    $ docker build --tag flaskr .
+    $ docker run --name flaskr -p 5001:5000 flaskr
+
+----
+
+Monitorowanie applikacji
+========================
+
+dockprom_
+
+* A monitoring solution for Docker hosts and containers
+
+.. code-block:: bash
+
+    $ git clone https://github.com/stefanprodan/dockprom
+    $ cd dockprom
+    $ ADMIN_USER=admin ADMIN_PASSWORD=admin docker-compose up -d
+
+
+----
+
+Locust w docker'ze
+==================
+
+locust_docker_
+
+
+----
+
+Definicja własnego klient'a
+===========================
 
 https://docs.locust.io/en/stable/testing-other-systems.html
 
@@ -293,3 +417,5 @@ Biblioteka do generowania prezentacji hovercraft_
 .. _locust_usng_HTTP_client: https://docs.locust.io/en/stable/writing-a-locustfile.html#using-the-http-client
 .. _flaskr: http://flask.pocoo.org/docs/1.0/tutorial/
 .. _Requests: http://docs.python-requests.org/en/master/user/quickstart/
+.. _dockprom: https://github.com/stefanprodan/dockprom
+.. _locust_docker: https://docs.locust.io/en/latest/running-locust-docker.html

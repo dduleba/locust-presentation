@@ -20,11 +20,13 @@ if __name__ == '__main__':
             # 'MobileUserLocust',
 
             # run parameters
-            '--print-stats'
+            '--print-stats',
             # '--no-web',
             # '--clients=2',
             # '--hatch=10'
             # '--help'
+
+            # '--host', 'http://127.0.0.1:5001'
         ]
     )
     # sys.argv.extend(example_01_args())

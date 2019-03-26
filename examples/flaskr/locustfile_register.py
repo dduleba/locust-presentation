@@ -1,7 +1,4 @@
-import random
-
 from locust import HttpLocust, TaskSet, task
-from locust.clients import HttpSession
 
 
 class RegisterTaskSet(TaskSet):
@@ -21,7 +18,6 @@ class RegisterTaskSet(TaskSet):
                 'password': 'test_password_{}_{}'.format(self.prefix, self.user_id)
             }
         )
-
 
 
 class IndexLocust(HttpLocust):

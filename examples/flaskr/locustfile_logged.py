@@ -64,7 +64,7 @@ class LoggedUserSequence(TaskSequence):
                   with content
                   '''
                   },
-            name='/post_id/update'
+            name='/[post_id]/update'
         )
 
     @seq_task(3)
@@ -72,7 +72,7 @@ class LoggedUserSequence(TaskSequence):
         post_id = self._get_post_id()
         self.client.post(
             '/{post_id}/delete'.format(post_id=post_id),
-            name='/post_id/delete'
+            name='/[post_id]/delete'
         )
 
     @seq_task(4)
