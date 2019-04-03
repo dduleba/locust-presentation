@@ -8,7 +8,7 @@ class MyTaskSet(TaskSet):
 
     @task
     def my_task(self):
-        log.info("executing my_task")
+        log.info("executing my_task {}".format(id(self)))
 
 class MyLocust(Locust):
     task_set = MyTaskSet

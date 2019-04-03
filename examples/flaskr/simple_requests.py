@@ -25,3 +25,8 @@ r = session.post('http://localhost:5000/auth/login',
                        'password': userpassword})
 print(r.status_code)
 print(session.cookies)
+
+r=session.post('http://localhost:5000/create',
+            data={'title': 'post example',
+                  'body': 'witam na ŁuczniczQA meetup'})
+print(r.status_code)
