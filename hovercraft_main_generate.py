@@ -4,7 +4,7 @@ if __name__ == '__main__':
     main(
         [
             # '-N',
-            'locust.rst',
+            'README.rst',
             # targetdir - generated presentation static html
             # 'www'
         ]
