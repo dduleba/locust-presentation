@@ -23,13 +23,11 @@ img {
     font-size: 42px;
     background-color: #124191;
     position: absolute;
-    left: 0;
     bottom: 0;
-    height: 50px;
-    width: 100%;
-    overflow: hidden;
+    width: 98%;
+    left: 1%;
+    righy: 1%;
     text-align: right;
-    margin-right: 20px;
 }
 
 table {

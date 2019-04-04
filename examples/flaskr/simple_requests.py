@@ -2,31 +2,30 @@ from random import random
 
 import requests
 
-# Pobranie głównej strony
-
-r = requests.get('http://localhost:5000/')
-print(r.status_code)
-print(r.content)
-
-# rejestracja użytkownika - HTTP post request
+# Initial condition
 user_id = random()
 username = 'test_user_{}'.format(user_id)
 userpassword = 'test_user_pass_{}'.format(user_id)
-r = requests.post('http://localhost:5000/auth/register',
-                  data={'username': username,
-                        'password': userpassword})
-print(r.status_code)
 
-# logowanie
+# Pobranie głównej strony
 session = requests.Session()
+r = session.get('http://localhost:5000/')
+print('get status code: ', r.status_code)
+print('get content: ', r.content[:80])
+
+# rejestracja użytkownika - HTTP post request
+r = session.post('http://localhost:5000/auth/register',
+                 data={'username': username,
+                       'password': userpassword})
+print('register status code: ', r.status_code)
 
 r = session.post('http://localhost:5000/auth/login',
                  data={'username': username,
                        'password': userpassword})
-print(r.status_code)
-print(session.cookies)
+print('login status code: ', r.status_code)
+print('login cookies: ', session.cookies)
 
-r=session.post('http://localhost:5000/create',
-            data={'title': 'post example',
-                  'body': 'witam na ŁuczniczQA meetup'})
-print(r.status_code)
+r = session.post('http://localhost:5000/create',
+                 data={'title': 'post example by {}'.format(username),
+                       'body': 'witam na ŁuczniczQA meetup'})
+print('post add status code: ', r.status_code)

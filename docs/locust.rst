@@ -8,8 +8,8 @@
 .. header::
 
     .. image:: img/logo.png
-        :width: 110
-        :height: 100
+        :width: 80
+        :height: 80
         :align: left
 
     Pythonowa szarańcza
@@ -83,6 +83,10 @@ stress (przeciążające)  Typ testowania wydajnościowego wykonywany,          
 sjsi_sylabus_
 
 istqb_performance_testing_
+
+Rodzaje testowania wydajnościowego:
+
+Load (obciążeniowe), Scalability (skalowalności), Spike, Concurrency (równoległości przetwarzania), Capacity
 
 .. note::
 
@@ -183,17 +187,21 @@ locust_dockprom_    Rozwiązanie do monitorowania locust'a, hostów oraz konter�
                     - **Locust Exporter** - Prometheus exporter for locust metrics
 ================    =======
 
-NOTE: Tabela zawiera zbiór narzędzi wykorzystywanych w bierzącym projekcie
+NOTE: Tabela zawiera podzbiór narzędzi wykorzystywanych w bierzącym projekcie
 
 ----
 
-Instalacja locust'a
+Instalacja locusta
 ===================
 
-W pythonie
-----------
 
-NOTE: polecam utworzenie virtualenv'a
+
+.. image:: img/locust_installation.gif
+    :align: left
+    :width: 520px
+    :height: 360px
+
+Tworzenie virtualenv'a - virtualenvwrapper_
 
 .. code-block:: bash
 
@@ -202,7 +210,7 @@ NOTE: polecam utworzenie virtualenv'a
     $ mkvirtualenv -p python3 locust
     (locust)$
 
-Instalacja
+Instalacja locusta
 
 .. code-block::
 
@@ -216,18 +224,17 @@ Wczytanie virtualnego środowiska
     $ workon locust
     (locust)$ locust --help
 
-oficjalna dokumentacja instalacji_
-
-.. _instalacji: https://docs.locust.io/en/latest/installation.html
+dokumentacja instalacji_locusta_
 
 ----
+
+.. image:: img/flaskr.gif
+    :align: left
 
 Test App
 ========
 
 
-.. image:: img/flaskr.gif
-    :align: left
 
 flask flaskr_ example
 ---------------------
@@ -241,11 +248,31 @@ flask flaskr_ example
 
 
 
+----
+
+Przygotowanie zapytań
+=====================
+
+.. image:: img/flaskr_get.gif
+    :align: left
+
+
+
 
 ----
 
-Wstęp do testowania aplikacji
-=============================
+Przygotowanie zapytań
+=====================
+
+.. image:: img/flaskr_register_user.gif
+    :align: left
+
+
+
+----
+
+flaskr - przykładowy scenariusz
+===============================
 
 Requests_ - HTTP dla ludzi
 --------------------------
@@ -256,36 +283,60 @@ Requests_ - HTTP dla ludzi
 
     import requests
 
-    # Pobranie głównej strony
-
-    r = requests.get('http://localhost:5000/')
-    print(r.status_code)
-    print(r.content)
-
-    # rejestracja użytkownika - HTTP post request
+    # Initial condition
     user_id = random()
     username = 'test_user_{}'.format(user_id)
     userpassword = 'test_user_pass_{}'.format(user_id)
-    r = requests.post('http://localhost:5000/auth/register',
-                      data={'username': username,
-                            'password': userpassword})
-    print(r.status_code)
 
-    # logowanie
+    # Pobranie głównej strony
     session = requests.Session()
+    r = session.get('http://localhost:5000/')
+    print('get status code: ', r.status_code)
+    print('get content: ', r.content)
+
+    # rejestracja użytkownika - HTTP post request
+    r = session.post('http://localhost:5000/auth/register',
+                     data={'username': username,
+                           'password': userpassword})
+    print('register status code: ', r.status_code)
 
     r = session.post('http://localhost:5000/auth/login',
                      data={'username': username,
                            'password': userpassword})
-    print(r.status_code)
-    print(session.cookies)
+    print('login status code: ', r.status_code)
+    print('login cookies: ', session.cookies)
 
+    r = session.post('http://localhost:5000/create',
+                     data={'title': 'post example by {}'.format(username),
+                           'body': 'witam na ŁuczniczQA meetup'})
+    print('post add status code: ', r.status_code)
+
+.. code-block::
+
+    get status code:  200
+    get content:  b'<!doctype html>\n<title>Posts - Flaskr</title>\n<link rel="stylesheet" href="/stat'
+    register status code:  200
+    login status code:  200
+    login cookies:  <RequestsCookieJar[<Cookie session=eyJ1c2VyX2lkIjo5fQ.XKUERw.lIoPgp32joW1ELnCrfcGumqaunw for localhost.local/>]>
+    post add status code:  200
 
 ----
 
 Get request
 ===========
 
+skrypt
+------
+
+.. code-block:: Python
+
+    session = requests.Session()
+    r = session.get('http://localhost:5000/')
+    print('get status code: ', r.status_code)
+    print('get content: ', r.content[:80])
+
+locust
+------
 locust_host_attribute_
 
 locust_usng_HTTP_client_
@@ -471,18 +522,9 @@ https://docs.locust.io/en/stable/testing-other-systems.html
 
 ----
 
-Narzędzia
-=========
-
-Pythonowa szarańcza locust_
-
-Zarządzanie virtualnymi środowiskami virtualenvwrapper_
-
-Biblioteka do generowania prezentacji hovercraft_
-
 .. _hovercraft: https://hovercraft.readthedocs.io/en/latest/presentations.html
-
 .. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.io/en/latest/
+.. _instalacji_locusta: https://docs.locust.io/en/latest/installation.html
 .. _locust: https://locust.io/
 .. _locustfile: https://docs.locust.io/en/stable/writing-a-locustfile.html
 .. _locust_local_url: http://localhost:8089/

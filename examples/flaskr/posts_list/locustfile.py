@@ -9,5 +9,5 @@ class IndexTaskSet(TaskSet):
 class IndexLocust(HttpLocust):
     task_set = IndexTaskSet
     min_wait = 5000
-    max_wait = 5000
+    max_wait = 10000
     host='http://127.0.0.1:5000'
