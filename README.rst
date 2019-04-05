@@ -20,7 +20,7 @@
 
 ----
 
-Dariusz Duleba
+Darek Duleba
 
 ----
 
@@ -56,6 +56,8 @@ open source dduleba_github_             kontrybucje do radish-bdd_
                                         locust_dockprom_ - dockprom + locust exporter
 
 =========== ========================    ======
+
+* bierzący status na kwiecień 2019
 
 ----
 
@@ -191,8 +193,8 @@ NOTE: Tabela zawiera podzbiór narzędzi wykorzystywanych w bierzącym projekcie
 
 ----
 
-Instalacja locusta
-===================
+locust w virtualenvie
+=====================
 
 
 
@@ -228,13 +230,59 @@ dokumentacja instalacji_locusta_
 
 ----
 
+locust w dockerze
+=================
+
+running_docker_with_locust_
+
+Docker file z locustio
+
+.. code-block:: Docker
+
+    FROM python:3.6.6-alpine3.8
+
+    RUN apk --no-cache add g++ \
+          && apk --no-cache add zeromq-dev \
+          && pip install locustio pyzmq
+
+    EXPOSE 8089 5557 5558
+
+    ENTRYPOINT ["/usr/local/bin/locust"]
+
+.. code-block:: sh
+
+    $ cd ~/git/locust/
+    $ docker build --tag locustio/locust .
+
+Docker z wykorzystaniem za pomocą exec'a
+
+.. code-block:: Docker
+
+    FROM locustio/locust
+
+    WORKDIR /locust
+
+    env PYTHONPATH /locust
+
+    ENTRYPOINT []
+    CMD ["tail","-f","/dev/null"]
+
+.. code-block:: sh
+
+    $ cd ~/git/locust-presentation/examples/packaging
+    $ docker build --tag locustio/locust .
+    $ cd ~/git/locust-presentation
+    $ docker run --cpus 1.0 --network host -d \
+        --name locust -p 8089:8089 \
+        --mount src="$(pwd)",target=/locust,type=bind dduleba/locust
+
+----
+
 .. image:: img/flaskr.gif
     :align: left
 
 Test App
 ========
-
-
 
 flask flaskr_ example
 ---------------------
@@ -246,7 +294,35 @@ flask flaskr_ example
     $ flask init-db
     $ flask run
 
+flaskr w dockerze
+-----------------
 
+Utwórz Dockerfile w flask examples\\tutorial
+
+.. code-block:: Docker
+
+    FROM python:3-alpine
+
+    ADD . /app
+    WORKDIR /app
+    RUN pip install -e .
+    ENV FLASK_APP flaskr
+    ENV FLASK_ENV development
+    RUN flask init-db
+
+    ENTRYPOINT ["flask"]
+    CMD ["run","--host","0.0.0.0"]
+
+.. code-block:: sh
+
+    $ docker build --tag flaskr:alpine .
+    $ docker run \
+        --cpus 1.0 \
+        --restart unless-stopped \
+        -d \
+        -p 5000:5000 \
+        --name flaskr \
+        flaskr:alpine
 
 ----
 
@@ -543,3 +619,4 @@ https://docs.locust.io/en/stable/testing-other-systems.html
 .. _dduleba_github: https://github.com/dduleba
 .. _wdna: https://github.com/dduleba/wdna
 .. _radish-bdd: https://github.com/radish-bdd/radish
+.. _running_docker_with_locust: https://docs.locust.io/en/latest/running-locust-docker.html
