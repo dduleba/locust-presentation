@@ -180,16 +180,9 @@ locust_             Open sourceowe narzędzie do genorowania obciążenia.
 
 
 locust_dockprom_    Rozwiązanie do monitorowania locust'a, hostów oraz konterów Dockerowych
-
-                    - **Prometheus** - Monitoring system & time series database
-                    - **Grafana** - The open platform for analytics and monitoring
-                    - **cAdvisor** - Analyzes resource usage and performance characteristics of running containers.
-                    - NodeExporter - Prometheus exporter for machine metrics
-                    - AlertManager
-                    - **Locust Exporter** - Prometheus exporter for locust metrics
 ================    =======
 
-NOTE: Tabela zawiera podzbiór narzędzi wykorzystywanych w bierzącym projekcie
+NOTE: Narzęzdia z których korzystamy w naszej grupie w bieżących projektach
 
 ----
 
@@ -273,8 +266,62 @@ Docker z wykorzystaniem za pomocą exec'a
     $ docker build --tag locustio/locust .
     $ cd ~/git/locust-presentation
     $ docker run --cpus 1.0 --network host -d \
-        --name locust -p 8089:8089 \
+        --name locustd -p 8089:8089 \
         --mount src="$(pwd)",target=/locust,type=bind dduleba/locust
+
+----
+
+.. image:: img/locust_web.gif
+
+
+----
+
+Monitorowanie
+=============
+
+===================================     ================    =====================     ==============================   ================
+Opcja                                   dockprom_           locust_exporter_           locust_dockprom_                 detale
+===================================     ================    =====================     ==============================   ================
+**Prometheus**                          tak                                             tak                             Monitoring system & time series database
+**Grafana**                             tak                                             tak                             The open platform for analytics and monitoring
+**cAdvisor**                            tak                                             tak                             Analyzes resource usage and performance characteristics of running containers.
+**NodeExporter**                        tak                                             tak                             Prometheus exporter for machine metrics
+AlertManager                            tak                                             tak                             handles alerts sent by client applications such as the Prometheus server
+locust exporter **for prometheus**                          tak                         tak                             python library
+locust exporter **on docker**                               w odpowiednim forku       odporny na restarty locusta
+locust exporter **with prometheus**                                                     tak
+locust exporter **with grafana**                                                        tak
+===================================     ================    =====================     ==============================   ================
+
+
+----
+
+locust_dockprom
+===============
+
+Wybudowanie kontenera dla locust_exporter_
+
+.. code-block:: sh
+
+    git clone https://github.com/dduleba/locust_exporter.git
+    cd locust_exporter
+    docker build --tag locust_exporter .
+
+Wytartowanie locust_dockprom_
+
+.. code-block:: sh
+
+    git clone https://github.com/dduleba/locust-dockprom.git
+    cd locust-dockprom
+    # LOUST_HOST - LOCUST HOST ADDR (reachable from docker)
+    export LOCUST_HOST=`ip -4 addr show scope global dev docker0 | grep inet | awk '{print \$2}' | cut -d / -f 1`
+
+    docker-compose up -d
+
+----
+
+.. image:: img/locust_dockprom.gif
+
 
 ----
 
@@ -526,7 +573,7 @@ Task sequence
 
 ----
 
-Flaskr w docker'ze
+Flaskr w dockerze
 ==================
 
 .. code-block:: Docker
@@ -549,35 +596,6 @@ Flaskr w docker'ze
 
     $ docker build --tag flaskr .
     $ docker run --name flaskr -p 5001:5000 flaskr
-
-----
-
-Monitorowanie applikacji
-========================
-
-dockprom_
-
-* A monitoring solution for Docker hosts and containers
-
-.. code-block:: bash
-
-    $ git clone https://github.com/stefanprodan/dockprom
-    $ cd dockprom
-    $ ADMIN_USER=admin ADMIN_PASSWORD=admin docker-compose up -d
-
-
-----
-
-Monitorowanie locust'a
-======================
-
-locust_exporter_ dla prometheus_'a
-
-lub locust_dockprom_
-
-.. image:: img/locust.png
-    :width: 950
-    :height: 450
 
 
 

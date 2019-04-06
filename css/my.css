@@ -32,18 +32,26 @@ img {
 
 table {
     background: white;
-    border: 1px solid black;
+    //border: 1px solid black;
+    border-collapse: collapse;
 }
 
 
 td {
- padding: 5px;
+ padding-right: 5px;
+ padding-left: 5px;
 
+// padding: 5px;
+ //border: 1px solid black;
 }
 
 th {
  background-color: lightgreen;
   color: white;
+  //border: 1px solid black;
+  padding-right: 5px;
+  padding-left: 5px;
+
 }
 
 tr:nth-child(even) {background-color: #f2f2f2;}
