@@ -7,7 +7,6 @@ from locust import HttpLocust, TaskSet
 
 
 class UserAllTaskSet(TaskSet):
-    # tasks = [UserEditPostTaskSet, UserAddPostTaskSet, UserDeletePostTaskSet]
     tasks = {UserEditPostTaskSet: 4,
              UserAddPostTaskSet: 4,
              UserDeletePostTaskSet: 3,
