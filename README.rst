@@ -21,6 +21,9 @@
 ----
 
 Darek Duleba
+------------
+
+Software Engineer at Nokia
 
 ----
 
@@ -179,10 +182,12 @@ locust_             Open sourceowe narzędzie do genorowania obciążenia.
                         - uruchomienie na wielu maszynach umożliwia symulowanie miliony równoczesnych użytkowników
 
 
-locust_dockprom_    Rozwiązanie do monitorowania locust'a, hostów oraz konterów Dockerowych
+dockprom_           Rozwiązanie do monitorowania hostów oraz konterów Dockerowych
+locust_exporter_    exporeter statystyk locusta dla Prometheus'a
 ================    =======
 
 NOTE: Narzęzdia z których korzystamy w naszej grupie w bieżących projektach
+NOTE: Na potrzeby prezentacji udało mi się stworzyć ciekawy projeckt dockprom + locust_exporter = locust_dockprom_
 
 ----
 
@@ -326,11 +331,13 @@ Wytartowanie locust_dockprom_
 
 ----
 
-.. image:: img/flaskr.gif
-    :align: left
 
 Test App
 ========
+
+.. image:: img/flaskr.gif
+    :align: left
+
 
 flask flaskr_ example
 ---------------------
@@ -366,6 +373,7 @@ Utwórz Dockerfile w flask examples\\tutorial
     $ docker build --tag flaskr:alpine .
     $ docker run \
         --cpus 1.0 \
+        --memory 4G \
         --restart unless-stopped \
         -d \
         -p 5000:5000 \
@@ -431,14 +439,9 @@ Requests_ - HTTP dla ludzi
                            'body': 'witam na ŁuczniczQA meetup'})
     print('post add status code: ', r.status_code)
 
-.. code-block::
+.. image:: img/flaskr_simple_request.gif
+    :align: left
 
-    get status code:  200
-    get content:  b'<!doctype html>\n<title>Posts - Flaskr</title>\n<link rel="stylesheet" href="/stat'
-    register status code:  200
-    login status code:  200
-    login cookies:  <RequestsCookieJar[<Cookie session=eyJ1c2VyX2lkIjo5fQ.XKUERw.lIoPgp32joW1ELnCrfcGumqaunw for localhost.local/>]>
-    post add status code:  200
 
 ----
 
@@ -453,7 +456,6 @@ skrypt
     session = requests.Session()
     r = session.get('http://localhost:5000/')
     print('get status code: ', r.status_code)
-    print('get content: ', r.content[:80])
 
 locust
 ------
@@ -482,6 +484,20 @@ Każda instancja TaskSet'a (HTTPLocust'a) zawiera atrybut client HttpSession. Kl
 
 ----
 
+Uruchomienie locusta - virtualenv
+=================================
+
+.. code-block:: sh
+
+    $ workon locust
+    $ cd ~/git/locust-presentation/examples/flaskr/posts_list
+    $ locust
+
+.. image:: img/locust_web_run.gif
+
+
+----
+
 Post request
 ============
 
@@ -489,8 +505,7 @@ Post request
 
     # rejestracja użytkownika - HTTP post request
     r = session.post('http://localhost:5000/auth/register',
-    data={'username': username,
-    'password': userpassword})
+            data={ 'username': username, 'password': userpassword })
     print('register status code: ', r.status_code)
 
 
@@ -530,6 +545,12 @@ Post request
         max_wait = 10000
         host = 'http://127.0.0.1:5000'
 
+----
+
+Uruchomienie locusta - docker exec
+==================================
+
+* NOTE locustd container needs to be run once before docker exec
 
 ----
 
@@ -588,8 +609,8 @@ Task sequence
 
 ----
 
-Połączenie requestów w całość
-=============================
+Połączenie kilku requestów w całość
+===================================
 
 .. code-block:: Python
 
@@ -623,6 +644,14 @@ Definicja własnego klient'a
 
 locust_twoj_kilent_
 
+----
+
+pull request
+============
+
+Add_errors_grouping_for_dynamic_endpoint_
+
+.. image:: img/locust_pull_request.png
 
 .. _hovercraft: https://hovercraft.readthedocs.io/en/latest/presentations.html
 .. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.io/en/latest/
@@ -647,3 +676,5 @@ locust_twoj_kilent_
 .. _wdna: https://github.com/dduleba/wdna
 .. _radish-bdd: https://github.com/radish-bdd/radish
 .. _running_docker_with_locust: https://docs.locust.io/en/latest/running-locust-docker.html
+.. _dariusz_duleba: https://www.linkedin.com/in/dariusz-duleba/
+.. _Add_errors_grouping_for_dynamic_endpoint: https://github.com/locustio/locust/pull/993
