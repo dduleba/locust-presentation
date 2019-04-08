@@ -69,6 +69,8 @@ Performance testing (Testy wydajnościowe)
 
 * Proces testowania mający na celu określenie wydajności oprogramowania.
 
+Testy_wydajnościowe_w_swiecie_microserwisów_
+
 ======================= =================================================== =================================================
 Rodzaj testowania       Opis                                                Przypadki testowe w praktyce
 ======================= =================================================== =================================================
@@ -345,6 +347,12 @@ flask flaskr_ example
 
 .. code-block:: sh
 
+    $ cd ~/git/
+    $ git clone https://github.com/dduleba/flask.git
+    $ cd ~/git/flask/examples/tutorial/
+
+.. code-block:: sh
+
     $ export FLASK_APP=flaskr
     $ export FLASK_ENV=development
     $ flask init-db
@@ -352,8 +360,6 @@ flask flaskr_ example
 
 flaskr w dockerze
 -----------------
-
-Utwórz Dockerfile w flask examples\\tutorial
 
 .. code-block:: Docker
 
@@ -794,3 +800,4 @@ Pytania i odpowiedzi
 .. _dariusz_duleba: https://www.linkedin.com/in/dariusz-duleba/
 .. _Add_errors_grouping_for_dynamic_endpoint: https://github.com/locustio/locust/pull/993
 .. _źródła_prezentacji: https://github.com/dduleba/locust-presentation
+.. _Testy_wydajnościowe_w_swiecie_microserwisów: https://youtu.be/i1Ldh4sEKsk
