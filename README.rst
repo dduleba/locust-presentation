@@ -551,8 +551,9 @@ Post request
 Uruchomienie locusta - docker exec
 ==================================
 
-Kontener locustd musi być uruchomiony tylko raz
-
+* Kontener locustd musi być uruchomiony
+    * docker run ..
+    * po przekazaniu argumentu --restart unless-stopped nie musimy już o tym pamiętać
 * montujemy źródła testów do katalogu /locust
     * kontener zawiera PYTHONPATH do katalogu /locust
     * daje to możliwość z korzystania z package'a w naszym przypadku examples
