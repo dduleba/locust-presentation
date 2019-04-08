@@ -760,6 +760,12 @@ Pytania i odpowiedzi
 
 źródła_prezentacji_
 
+----
+
+.. image:: img/nokia_summer_trainees_2019.jpg
+    :width: 1100px
+    :height: 800px
+
 
 .. _hovercraft: https://hovercraft.readthedocs.io/en/latest/presentations.html
 .. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.io/en/latest/
