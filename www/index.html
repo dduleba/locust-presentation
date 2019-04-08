@@ -1,0 +1,295 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><title>Pythonowa Szara&#x144;cza</title><meta charset="UTF-8"></meta><meta name="generator" content="Hovercraft! 1.0 http://regebro.github.com/hovercraft"></meta><link rel="stylesheet" href="css/hovercraft.css" media="all"></link><link rel="stylesheet" href="css/highlight.css" media="all"></link><link rel="stylesheet" href="css/my.css" media="screen,projection"></link><script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        showProcessingMessages: false,
+        messageStyle: "none",
+        TeX : { extensions : ['color.js'] }
+      });
+    </script></head><body class="impress-not-supported"><div id="impress-help"></div><div class="header"><img src="img/logo.png" width="80" height="80" align="left"></img><p>Pythonowa szara&#x144;cza</p></div><div id="impress"><div class="step step-level-1" step="0" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="0" data-y="0" data-z="0"><h1 id="darek-duleba">Darek Duleba</h1><p>Software Engineer at Nokia</p></div><div class="step step-level-1" step="1" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="1600" data-y="0" data-z="0"><table cellpadding="0" cellspacing="0"><thead><tr><th><p>O mnie</p></th><th></th><th></th></tr></thead><tbody><tr><td><p>rodzina</p></td><td><p>10-ty rok ma&#x142;&#x17C;e&#x144;stwa</p><p>2 syn&#xF3;w - Filip i Damian</p></td><td></td></tr><tr><td><p>praca</p></td><td><p>13-ty rok pracy</p><ul><li>ALU (6+)</li><li>Genesys (5+)</li><li>Nokia (1+)</li></ul></td><td><p>Specjalizuje si&#x119; w autmatyzacji test&#xF3;w i nie tylko</p></td></tr><tr><td><p>sport</p></td><td><p>Triathlon</p><ul><li>p&#x142;ywanie</li><li>jazda na rowerze</li><li>bieganie</li></ul></td><td><p>pocz&#x105;tki zabawy z triathlonem</p></td></tr><tr><td><p>open source</p></td><td><p><a href="https://github.com/dduleba">dduleba_github</a></p></td><td><p>kontrybucje do <a href="https://github.com/radish-bdd/radish">radish-bdd</a></p><p><a href="https://github.com/dduleba/wdna">wdna</a> (webowe narz&#x119;dzia wspieraj&#x105;ce analizy dna)</p><p><a href="https://github.com/dduleba/locust_exporter">locust_exporter</a></p><p><a href="https://github.com/dduleba/locust-dockprom">locust_dockprom</a> - dockprom + locust exporter</p></td></tr></tbody></table><ul><li>bierz&#x105;cy status na kwiecie&#x144; 2019</li></ul></div><div class="step step-level-1" step="2" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="3200" data-y="0" data-z="0"><h1 id="performance-testing-testy-wydajnosciowe">Performance testing (Testy wydajno&#x15B;ciowe)</h1><ul><li>Proces testowania maj&#x105;cy na celu okre&#x15B;lenie wydajno&#x15B;ci oprogramowania.</li></ul><table cellpadding="0" cellspacing="0"><thead><tr><th><p>Rodzaj testowania</p></th><th><p>Opis</p></th><th><p>Przypadki testowe w praktyce</p></th></tr></thead><tbody><tr><td><p>endurance (stabilno&#x15B;ci)</p></td><td><p>Skupienie na stabilno&#x15B;ci systemu w przedziala czasu
+Weryfikuje brak problem&#xF3;w z zasobami (np.
+wycieki pami&#x119;ci, po&#x142;&#x105;cenia do bazy, pula w&#x105;tk&#xF3;w)</p></td><td><p>72 godzinne testy przy sta&#x142;ym obci&#x105;&#x17C;eniu.</p><p>scenariusze u&#x17C;ytkownik&#xF3;w bez przeci&#x105;&#x17C;ania systemu</p></td></tr><tr><td><p>stress (przeci&#x105;&#x17C;aj&#x105;ce)</p></td><td><p>Typ testowania wydajno&#x15B;ciowego wykonywany,
+by okre&#x15B;li&#x107; jak system lub jego modu&#x142; pracuje
+na przewidywanej lub wyspecyfikowanej granicy
+lub poza ni&#x105; lub te&#x17C; przy ograniczonym dost&#x119;pie
+do pami&#x119;ci lub serwera.</p></td><td><p>5 minutowe testy skupiaj&#x105;ce si&#x119; na konkretnym
+obszarze. Ich celem jest okre&#x15B;lenie maksymalnej
+wydajno&#x15B;ci przy ograniczonych zasobach</p></td></tr></tbody></table><p><a href="https://sjsi.org/download/3319/">sjsi_sylabus</a></p><p><a href="https://www.istqb.org/documents/ISTQB%20CTFL-PT%20Syllabus%202018%20GA.pdf">istqb_performance_testing</a></p><p>Pozosta&#x142;e rodzaje testowania wydajno&#x15B;ciowego:</p><p>Load (obci&#x105;&#x17C;eniowe), Scalability (skalowalno&#x15B;ci), Spike, Concurrency (r&#xF3;wnoleg&#x142;o&#x15B;ci przetwarzania), Capacity</p><div class="notes"><dl><dt>Types of performance testing:</dt><dd><ul><li>Load Testing (Testowanie obci&#x105;&#x17C;eniowe)</li><li>Stress Testing (Testowanie przeci&#x105;&#x17C;aj&#x105;ce)</li><li>Scalability Testing (Testowanie skalowalno&#x15B;ci)</li><li>Spike Testing</li><li>Endurance Testing</li><li>Concurrency Testing (testowanie r&#xF3;wnoleg&#x142;o&#x15B;ci przetwarzania)</li><li>Capacity Testing</li></ul></dd></dl><ul><li><dl><dt>Types of performance tests:</dt><dd><ul><li>static testing</li><li>dynamic testing</li></ul></dd></dl></li><li><dl><dt>Performance Testing</dt><dd><p>Performance testing is an umbrella term including any kind of testing focused on
+performance (responsiveness) of the system or component under different volumes of
+load.</p></dd></dl></li><li><dl><dt>Load Testing</dt><dd><p>Load testing focuses on the ability of a system to handle increasing levels of anticipated
+realistic loads resulting from transaction requests generated by controlled numbers of
+concurrent users or processes.</p></dd></dl></li><li><dl><dt>Stress Testing</dt><dd><p>Stress testing focuses on the ability of a system or component to handle peak loads
+that are at or beyond the limits of its anticipated or specified workloads. Stress
+testing is also used to evaluate a system&#x2019;s ability to handle reduced availability of
+resources such as accessible computing capacity, available bandwidth, and memory.</p></dd></dl></li><li><dl><dt>Scalability Testing</dt><dd><p>Scalability testing focuses on the ability of a system to meet future efficiency
+requirements which may be beyond those currently required. The objective of these
+tests is to determine the system&#x2019;s ability to grow (e.g., with more users, larger amounts
+of data stored) without violating the currently specified performance requirements or
+failing. Once the limits of scalability are known, threshold values can be set and
+monitored in production to provide a warning of problems which may be about to arise..
+In addition the production environment may be adjusted with appropriate amounts of
+hardware.</p></dd></dl></li><li><dl><dt>Spike Testing</dt><dd><p>Spike testing focuses on the ability of a system to respond correctly to sudden bursts
+of peak loads and return afterwards to a steady state.</p></dd></dl></li><li><dl><dt>Endurance Testing</dt><dd><p>Endurance testing focuses on the stability of the system over a time frame specific to
+the system&#x2019;s operational context. This type of testing verifies that there are no resource
+capacity problems (e.g., memory leaks, database connections, thread pools) that may
+eventually degrade performance and/or cause failures at breaking points.</p></dd></dl></li><li><dl><dt>Concurrency Testing</dt><dd><p>Concurrency testing focuses on the impact of situations where specific actions occur
+simultaneously (e.g., when large numbers of users log in at the same time).
+Concurrency issues are notoriously difficult to find and reproduce, particularly when
+the problem occurs in an environment where testing has little or no control, such as
+production.</p></dd></dl></li><li><dl><dt>Capacity Testing</dt><dd><p>Capacity testing determines how many users and/or transactions a given system will
+support and still meet the stated performance objectives. These objectives may also
+be stated with regard to the data volumes resulting from the transactions.</p></dd></dl></li></ul></div></div><div class="step step-level-1" step="3" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="4800" data-y="0" data-z="0"><h1 id="narzedzia-do-testow-wydajnosciowych">Narz&#x119;dzia do test&#xF3;w wydajno&#x15B;ciowych</h1><table cellpadding="0" cellspacing="0"><thead><tr><th><p>Nazwa</p></th><th><p>Opis</p></th></tr></thead><tbody><tr><td><p><a href="https://gatling.io/">Gatling</a></p></td><td><p>Open sourceowe narz&#x119;dzie do genorowania obci&#x105;&#x17C;enia.</p><p>Pot&#x119;&#x17C;ne narz&#x119;dzie z mo&#x17C;liwo&#x15B;ci&#x105; nagrywania rcuhu webowego z kolorowymi raportami.</p></td></tr><tr><td><p><a href="https://locust.io/">locust</a></p></td><td><p>Open sourceowe narz&#x119;dzie do genorowania obci&#x105;&#x17C;enia.</p><p>Umo&#x17C;liwia definicje zachowania u&#x17C;ytkownika</p><p>Scenariusze u&#x17C;ytkownika w kodzie <strong>python</strong>'owym</p><ul><li><dl><dt>Skalowalny</dt><dd><ul><li>tysi&#x105;ce u&#x17C;ytkownik&#xF3;w na jednej maszynie (event-based)</li></ul></dd></dl></li><li><dl><dt>Rozporoszony</dt><dd><ul><li>uruchomienie na wielu maszynach umo&#x17C;liwia symulowanie miliony r&#xF3;wnoczesnych u&#x17C;ytkownik&#xF3;w</li></ul></dd></dl></li></ul></td></tr><tr><td><p><a href="https://github.com/stefanprodan/dockprom">dockprom</a></p></td><td><p>Rozwi&#x105;zanie do monitorowania host&#xF3;w oraz konter&#xF3;w Dockerowych</p></td></tr><tr><td><p><a href="https://github.com/dduleba/locust_exporter">locust_exporter</a></p></td><td><p>exporeter statystyk locusta dla Prometheus'a</p></td></tr></tbody></table><p>NOTE: Narz&#x119;zdia z kt&#xF3;rych korzystamy w naszej grupie w bie&#x17C;&#x105;cych projektach
+NOTE: Na potrzeby prezentacji uda&#x142;o mi si&#x119; stworzy&#x107; ciekawy projeckt dockprom + locust_exporter = <a href="https://github.com/dduleba/locust-dockprom">locust_dockprom</a></p></div><div class="step step-level-1" step="4" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="6400" data-y="0" data-z="0"><h1 id="locust-w-virtualenvie">locust w virtualenvie</h1><img src="img/locust_installation.gif" width="520px" height="360px" align="left"></img><p>Tworzenie virtualenv'a - <a href="https://virtualenvwrapper.readthedocs.io/en/latest/">virtualenvwrapper</a></p><pre class="highlight code bash">$ pip install virtualenv
+$ pip install virtualenvwrapper
+$ mkvirtualenv -p python3 locust
+<span class="o">(</span>locust<span class="o">)</span>$</pre><p>Instalacja locusta</p><pre class="highlight code">(locust)$ pip install locustio</pre><p>Wczytanie virtualnego &#x15B;rodowiska</p><pre class="highlight code">$ source virtualenvwrapper.sh
+$ workon locust
+(locust)$ locust --help</pre><p>dokumentacja <a href="https://docs.locust.io/en/latest/installation.html">instalacji_locusta</a></p></div><div class="step step-level-1" step="5" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="8000" data-y="0" data-z="0"><h1 id="locust-w-dockerze">locust w dockerze</h1><p><a href="https://docs.locust.io/en/latest/running-locust-docker.html">running_docker_with_locust</a></p><p>Docker file z locustio</p><pre class="highlight code Docker"><span class="k">FROM</span><span class="s"> python:3.6.6-alpine3.8</span>
+
+<span class="k">RUN</span> apk --no-cache add g++ <span class="se">\
+</span>      <span class="o">&amp;&amp;</span> apk --no-cache add zeromq-dev <span class="se">\
+</span>      <span class="o">&amp;&amp;</span> pip install locustio pyzmq
+
+<span class="k">EXPOSE</span><span class="s"> 8089 5557 5558</span>
+
+<span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">"/usr/local/bin/locust"</span><span class="p">]</span></pre><pre class="highlight code sh">$ <span class="nb">cd</span> ~/git/locust/
+$ docker build --tag locustio/locust .</pre><p>Docker z wykorzystaniem za pomoc&#x105; exec'a</p><pre class="highlight code Docker"><span class="k">FROM</span><span class="s"> locustio/locust</span>
+
+<span class="k">WORKDIR</span><span class="s"> /locust</span>
+
+<span class="k">env</span> PYTHONPATH /locust
+
+<span class="k">ENTRYPOINT</span> <span class="p">[]</span>
+<span class="k">CMD</span> <span class="p">[</span><span class="s2">"tail"</span><span class="p">,</span><span class="s2">"-f"</span><span class="p">,</span><span class="s2">"/dev/null"</span><span class="p">]</span></pre><pre class="highlight code sh">$ <span class="nb">cd</span> ~/git/locust-presentation/examples/packaging
+$ docker build --tag dduleba/locust .
+<span class="c1"># to mount examples/flaskr/ we need to chage directory
+</span>$ <span class="nb">cd</span> ~/git/locust-presentation
+$ docker run --restart unless-stopped <span class="se">\
+</span>    --network host -d <span class="se">\
+</span>    --name locustd -p <span class="m">8089</span>:8089 <span class="se">\
+</span>    --mount <span class="nv">src</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">"</span>,target<span class="o">=</span>/locust,type<span class="o">=</span><span class="nb">bind</span> dduleba/locust</pre></div><div class="step step-level-1" step="6" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="9600" data-y="0" data-z="0"><img src="img/locust_web.gif"></img></div><div class="step step-level-1" step="7" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="11200" data-y="0" data-z="0"><h1 id="monitorowanie">Monitorowanie</h1><table cellpadding="0" cellspacing="0"><thead><tr><th><p>Opcja</p></th><th><p><a href="https://github.com/stefanprodan/dockprom">dockprom</a></p></th><th><p><a href="https://github.com/dduleba/locust_exporter">locust_exporter</a></p></th><th><p><a href="https://github.com/dduleba/locust-dockprom">locust_dockprom</a></p></th><th><p>detale</p></th></tr></thead><tbody><tr><td><p><strong>Prometheus</strong></p></td><td><p>tak</p></td><td></td><td><p>tak</p></td><td><p>Monitoring system &amp; time series database</p></td></tr><tr><td><p><strong>Grafana</strong></p></td><td><p>tak</p></td><td></td><td><p>tak</p></td><td><p>The open platform for analytics and monitoring</p></td></tr><tr><td><p><strong>cAdvisor</strong></p></td><td><p>tak</p></td><td></td><td><p>tak</p></td><td><p>Analyzes resource usage and performance characteristics of running containers.</p></td></tr><tr><td><p><strong>NodeExporter</strong></p></td><td><p>tak</p></td><td></td><td><p>tak</p></td><td><p>Prometheus exporter for machine metrics</p></td></tr><tr><td><p>AlertManager</p></td><td><p>tak</p></td><td></td><td><p>tak</p></td><td><p>handles alerts sent by client applications such as the Prometheus server</p></td></tr><tr><td><p>locust exporter <strong>for prometheus</strong></p></td><td></td><td><p>tak</p></td><td><p>tak</p></td><td><p>python library</p></td></tr><tr><td><p>locust exporter <strong>on docker</strong></p></td><td></td><td><p>w odpowiednim forku</p></td><td><p>odporny na restarty locusta</p></td><td></td></tr><tr><td><p>locust exporter <strong>with prometheus</strong></p></td><td></td><td></td><td><p>tak</p></td><td></td></tr><tr><td><p>locust exporter <strong>with grafana</strong></p></td><td></td><td></td><td><p>tak</p></td><td></td></tr></tbody></table></div><div class="step step-level-1" step="8" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="12800" data-y="0" data-z="0"><h1 id="locust-dockprom">locust_dockprom</h1><p>Wybudowanie kontenera dla <a href="https://github.com/dduleba/locust_exporter">locust_exporter</a></p><pre class="highlight code sh">git clone https://github.com/dduleba/locust_exporter.git
+<span class="nb">cd</span> locust_exporter
+docker build --tag locust_exporter .</pre><p>Wytartowanie <a href="https://github.com/dduleba/locust-dockprom">locust_dockprom</a></p><pre class="highlight code sh">git clone https://github.com/dduleba/locust-dockprom.git
+<span class="nb">cd</span> locust-dockprom
+<span class="c1"># LOUST_HOST - LOCUST HOST ADDR (reachable from docker)
+</span><span class="nb">export</span> <span class="nv">LOCUST_HOST</span><span class="o">=</span><span class="sb">`</span>ip -4 addr show scope global dev docker0 <span class="p">|</span> grep inet <span class="p">|</span> awk <span class="s1">'{print \$2}'</span> <span class="p">|</span> cut -d / -f <span class="m">1</span><span class="sb">`</span>
+
+docker-compose up -d</pre></div><div class="step step-level-1" step="9" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="14400" data-y="0" data-z="0"><img src="img/locust_dockprom.gif"></img></div><div class="step step-level-1" step="10" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="16000" data-y="0" data-z="0"><h1 id="test-app">Test App</h1><img src="img/flaskr.gif" align="left"></img><h1 id="flask-flaskr-example">flask <a href="http://flask.pocoo.org/docs/1.0/tutorial/">flaskr</a> example</h1><pre class="highlight code sh">$ <span class="nb">export</span> <span class="nv">FLASK_APP</span><span class="o">=</span>flaskr
+$ <span class="nb">export</span> <span class="nv">FLASK_ENV</span><span class="o">=</span>development
+$ flask init-db
+$ flask run</pre><h1 id="flaskr-w-dockerze">flaskr w dockerze</h1><p>Utw&#xF3;rz Dockerfile w flask examples\tutorial</p><pre class="highlight code Docker"><span class="k">FROM</span><span class="s"> python:3-alpine</span>
+
+<span class="k">ADD</span> . /app
+<span class="k">WORKDIR</span><span class="s"> /app</span>
+<span class="k">RUN</span> pip install -e .
+<span class="k">ENV</span> FLASK_APP flaskr
+<span class="k">ENV</span> FLASK_ENV development
+<span class="k">RUN</span> flask init-db
+
+<span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">"flask"</span><span class="p">]</span>
+<span class="k">CMD</span> <span class="p">[</span><span class="s2">"run"</span><span class="p">,</span><span class="s2">"--host"</span><span class="p">,</span><span class="s2">"0.0.0.0"</span><span class="p">]</span></pre><pre class="highlight code sh">$ docker build --tag flaskr:alpine .
+$ docker run <span class="se">\
+</span>    --cpus <span class="m">1</span>.0 <span class="se">\
+</span>    --memory 4G <span class="se">\
+</span>    --restart unless-stopped <span class="se">\
+</span>    -d <span class="se">\
+</span>    -p <span class="m">5000</span>:5000 <span class="se">\
+</span>    --name flaskr <span class="se">\
+</span>    flaskr:alpine</pre></div><div class="step step-level-1" step="11" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="17600" data-y="0" data-z="0"><h1 id="przygotowanie-zapytan">Przygotowanie zapyta&#x144;</h1><img src="img/flaskr_get.gif" align="left"></img></div><div class="step step-level-1" step="12" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="19200" data-y="0" data-z="0"><h1 id="id1">Przygotowanie zapyta&#x144;</h1><img src="img/flaskr_register_user.gif" align="left"></img></div><div class="step step-level-1" step="13" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="20800" data-y="0" data-z="0"><h1 id="flaskr-przykladowy-scenariusz">flaskr - przyk&#x142;adowy scenariusz</h1><h1 id="requests-http-dla-ludzi"><a href="http://docs.python-requests.org/en/master/user/quickstart/">Requests</a> - HTTP dla ludzi</h1><pre class="highlight code Python"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="c1"># Initial condition</span>
+<span class="n">user_id</span> <span class="o">=</span> <span class="n">random</span><span class="p">()</span>
+<span class="n">username</span> <span class="o">=</span> <span class="s1">'test_user_{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+<span class="n">userpassword</span> <span class="o">=</span> <span class="s1">'test_user_pass_{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+
+<span class="c1"># Pobranie g&#x142;&#xF3;wnej strony</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://localhost:5000/'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'get status code: '</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'get content: '</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+
+<span class="c1"># rejestracja u&#x17C;ytkownika - HTTP post request</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">'http://localhost:5000/auth/register'</span><span class="p">,</span>
+                 <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">'username'</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
+                       <span class="s1">'password'</span><span class="p">:</span> <span class="n">userpassword</span><span class="p">})</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'register status code: '</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">'http://localhost:5000/auth/login'</span><span class="p">,</span>
+                 <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">'username'</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
+                       <span class="s1">'password'</span><span class="p">:</span> <span class="n">userpassword</span><span class="p">})</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'login status code: '</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'login cookies: '</span><span class="p">,</span> <span class="n">session</span><span class="o">.</span><span class="n">cookies</span><span class="p">)</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">'http://localhost:5000/create'</span><span class="p">,</span>
+                 <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">'title'</span><span class="p">:</span> <span class="s1">'post example by {}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">username</span><span class="p">),</span>
+                       <span class="s1">'body'</span><span class="p">:</span> <span class="s1">'witam na &#x141;uczniczQA meetup'</span><span class="p">})</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'post add status code: '</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span></pre><img src="img/flaskr_simple_request.gif" align="left"></img></div><div class="step step-level-1" step="14" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="22400" data-y="0" data-z="0"><h1 id="get-request">Get request</h1><h1 id="skrypt">skrypt</h1><pre class="highlight code Python"><span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'http://localhost:5000/'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'get status code: '</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span></pre><h1 id="locust">locust</h1><p><a href="https://docs.locust.io/en/stable/writing-a-locustfile.html#the-host-attribute">locust_host_attribute</a></p><p><a href="https://docs.locust.io/en/stable/writing-a-locustfile.html#using-the-http-client">locust_usng_HTTP_client</a></p><p>Ka&#x17C;da instancja TaskSet'a (HTTPLocust'a) zawiera atrybut client HttpSession. Klasa HttpSession dziedziczy z requests.Session</p><pre class="highlight code Python"><span class="kn">from</span> <span class="nn">locust</span> <span class="kn">import</span> <span class="n">HttpLocust</span><span class="p">,</span> <span class="n">TaskSet</span><span class="p">,</span> <span class="n">task</span>
+
+<span class="k">class</span> <span class="nc">IndexTaskSet</span><span class="p">(</span><span class="n">TaskSet</span><span class="p">):</span>
+    <span class="nd">@task</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">IndexLocust</span><span class="p">(</span><span class="n">HttpLocust</span><span class="p">):</span>
+    <span class="n">task_set</span> <span class="o">=</span> <span class="n">IndexTaskSet</span>
+    <span class="n">min_wait</span> <span class="o">=</span> <span class="mi">5000</span>
+    <span class="n">max_wait</span> <span class="o">=</span> <span class="mi">10000</span>
+    <span class="n">host</span><span class="o">=</span><span class="s1">'http://127.0.0.1:5000'</span></pre></div><div class="step step-level-1" step="15" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="24000" data-y="0" data-z="0"><h1 id="uruchomienie-locusta-virtualenv">Uruchomienie locusta - virtualenv</h1><pre class="highlight code sh">$ workon locust
+$ <span class="nb">cd</span> ~/git/locust-presentation/examples/flaskr/posts_list
+$ locust</pre><img src="img/locust_web_run.gif"></img></div><div class="step step-level-1" step="16" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="25600" data-y="0" data-z="0"><h1 id="post-request">Post request</h1><pre class="highlight code Python"><span class="c1"># rejestracja u&#x17C;ytkownika - HTTP post request</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">session</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">'http://localhost:5000/auth/register'</span><span class="p">,</span>
+        <span class="n">data</span><span class="o">=</span><span class="p">{</span> <span class="s1">'username'</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span> <span class="s1">'password'</span><span class="p">:</span> <span class="n">userpassword</span> <span class="p">})</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">'register status code: '</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span></pre><pre class="highlight code Python"><span class="kn">from</span> <span class="nn">locust</span> <span class="kn">import</span> <span class="n">HttpLocust</span><span class="p">,</span> <span class="n">TaskSet</span><span class="p">,</span> <span class="n">task</span>
+
+
+<span class="k">class</span> <span class="nc">UserRegisterTaskSet</span><span class="p">(</span><span class="n">TaskSet</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">on_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prefix</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">user_register</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">user_name</span><span class="p">,</span> <span class="n">user_password</span><span class="p">):</span>
+        <span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="s2">"/auth/register"</span><span class="p">,</span>
+            <span class="n">data</span><span class="o">=</span><span class="p">{</span>
+                <span class="s1">'username'</span><span class="p">:</span> <span class="n">user_name</span><span class="p">,</span>
+                <span class="s1">'password'</span><span class="p">:</span> <span class="n">user_password</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+
+    <span class="nd">@task</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_id</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">user_name</span> <span class="o">=</span> <span class="s1">'test_user_{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prefix</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span>
+        <span class="n">user_password</span> <span class="o">=</span> <span class="s1">'test_user_password_{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_register</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span> <span class="n">user_name</span><span class="p">,</span> <span class="n">user_password</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">IndexLocust</span><span class="p">(</span><span class="n">HttpLocust</span><span class="p">):</span>
+    <span class="n">task_set</span> <span class="o">=</span> <span class="n">UserRegisterTaskSet</span>
+    <span class="n">min_wait</span> <span class="o">=</span> <span class="mi">5000</span>
+    <span class="n">max_wait</span> <span class="o">=</span> <span class="mi">10000</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s1">'http://127.0.0.1:5000'</span></pre></div><div class="step step-level-1" step="17" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="27200" data-y="0" data-z="0"><h1 id="uruchomienie-locusta-docker-exec">Uruchomienie locusta - docker exec</h1><p>Kontener locustd musi by&#x107; uruchomiony tylko raz</p><ul><li><dl><dt>montujemy &#x17A;r&#xF3;d&#x142;a test&#xF3;w do katalogu /locust</dt><dd><ul><li>kontener zawiera PYTHONPATH do katalogu /locust</li><li>daje to mo&#x17C;liwo&#x15B;&#x107; z korzystania z package'a w naszym przypadku examples</li></ul></dd></dl></li></ul><pre class="highlight code sh">$ <span class="nb">cd</span> ~/git/locust-presentation
+$ docker run --restart unless-stopped <span class="se">\
+</span>    --network host -d <span class="se">\
+</span>    --name locustd -p <span class="m">8089</span>:8089 <span class="se">\
+</span>    --mount <span class="nv">src</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">"</span>,target<span class="o">=</span>/locust,type<span class="o">=</span><span class="nb">bind</span> dduleba/locust</pre><p>Zatrzymanie poprzedniego run'u locust'a</p><pre class="highlight code sh">docker <span class="nb">exec</span> locustd pkill -f locust</pre><p>Uruchomienie locusta</p><pre class="highlight code sh">docker <span class="nb">exec</span> locustd locust -f examples/flaskr/user_all_actions/locustfile.py</pre></div><div class="step step-level-1" step="18" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="28800" data-y="0" data-z="0"><h1 id="task-sequence">Task sequence</h1><pre class="highlight code Python"><span class="kn">from</span> <span class="nn">examples.flaskr.user_add_post.locustfile</span> <span class="kn">import</span> <span class="n">UserAddPostTaskSet</span>
+<span class="kn">from</span> <span class="nn">examples.flaskr.user_login.locustfile</span> <span class="kn">import</span> <span class="n">UserLoginTaskSet</span>
+<span class="kn">from</span> <span class="nn">examples.flaskr.user_register.locustfile</span> <span class="kn">import</span> <span class="n">UserRegisterTaskSet</span>
+<span class="kn">from</span> <span class="nn">examples.flaskr.utils</span> <span class="kn">import</span> <span class="n">_get_post_id</span>
+<span class="kn">from</span> <span class="nn">locust</span> <span class="kn">import</span> <span class="n">HttpLocust</span><span class="p">,</span> <span class="n">TaskSequence</span><span class="p">,</span> <span class="n">seq_task</span>
+
+
+<span class="k">class</span> <span class="nc">UserDeletePostTaskSet</span><span class="p">(</span><span class="n">TaskSequence</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">on_start</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">user_id</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_name</span> <span class="o">=</span> <span class="s1">'test_user_{}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_password</span> <span class="o">=</span> <span class="s1">'{}x'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_name</span><span class="p">)</span>
+        <span class="n">UserRegisterTaskSet</span><span class="o">.</span><span class="n">user_register</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+                                          <span class="n">user_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">user_name</span><span class="p">,</span>
+                                          <span class="n">user_password</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">user_password</span><span class="p">)</span>
+        <span class="n">UserLoginTaskSet</span><span class="o">.</span><span class="n">user_login</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+                                    <span class="n">user_name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">user_name</span><span class="p">,</span>
+                                    <span class="n">user_password</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">user_password</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">post_id</span> <span class="o">=</span> <span class="bp">None</span>
+
+    <span class="nd">@seq_task</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">add_post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="s1">'{}: title'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">user_name</span><span class="p">)</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="s2">"to be deleted"</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">UserAddPostTaskSet</span><span class="o">.</span><span class="n">user_add_post</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="p">,</span>
+                                                    <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
+                                                    <span class="n">body</span><span class="o">=</span><span class="n">body</span><span class="p">,</span> <span class="n">catch_response</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">post_id</span> <span class="o">=</span> <span class="n">_get_post_id</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+
+    <span class="nd">@seq_task</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">post_id</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">return</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="s1">'/{post_id}/delete'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">post_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">post_id</span><span class="p">),</span>
+            <span class="n">name</span><span class="o">=</span><span class="s1">'/[post_id]/delete'</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">post_id</span> <span class="o">=</span> <span class="bp">None</span>
+
+
+<span class="k">class</span> <span class="nc">IndexLocust</span><span class="p">(</span><span class="n">HttpLocust</span><span class="p">):</span>
+    <span class="n">task_set</span> <span class="o">=</span> <span class="n">UserDeletePostTaskSet</span>
+    <span class="n">min_wait</span> <span class="o">=</span> <span class="mi">5000</span>
+    <span class="n">max_wait</span> <span class="o">=</span> <span class="mi">10000</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s1">'http://127.0.0.1:5000'</span></pre></div><div class="step step-level-1" step="19" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="30400" data-y="0" data-z="0"><h1 id="polaczenie-kilku-requestow-w-calosc">Po&#x142;&#x105;czenie kilku request&#xF3;w w ca&#x142;o&#x15B;&#x107;</h1><pre class="highlight code Python"><span class="kn">from</span> <span class="nn">examples.flaskr.posts_list.locustfile</span> <span class="kn">import</span> <span class="n">IndexTaskSet</span>
+<span class="kn">from</span> <span class="nn">examples.flaskr.user_add_post.locustfile</span> <span class="kn">import</span> <span class="n">UserAddPostTaskSet</span>
+<span class="kn">from</span> <span class="nn">examples.flaskr.user_delete_post.locustfile</span> <span class="kn">import</span> <span class="n">UserDeletePostTaskSet</span>
+<span class="kn">from</span> <span class="nn">examples.flaskr.user_edit_post.locustfile</span> <span class="kn">import</span> <span class="n">UserEditPostTaskSet</span>
+<span class="kn">from</span> <span class="nn">examples.flaskr.user_login.locustfile</span> <span class="kn">import</span> <span class="n">UserLoginTaskSet</span>
+<span class="kn">from</span> <span class="nn">examples.flaskr.user_register.locustfile</span> <span class="kn">import</span> <span class="n">UserRegisterTaskSet</span>
+<span class="kn">from</span> <span class="nn">locust</span> <span class="kn">import</span> <span class="n">HttpLocust</span><span class="p">,</span> <span class="n">TaskSet</span>
+
+
+<span class="k">class</span> <span class="nc">UserAllTaskSet</span><span class="p">(</span><span class="n">TaskSet</span><span class="p">):</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="p">{</span><span class="n">UserEditPostTaskSet</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+             <span class="n">UserAddPostTaskSet</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+             <span class="n">UserDeletePostTaskSet</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+             <span class="n">UserLoginTaskSet</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+             <span class="n">UserRegisterTaskSet</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+             <span class="n">IndexTaskSet</span><span class="p">:</span> <span class="mi">8</span><span class="p">}</span>
+
+
+<span class="k">class</span> <span class="nc">IndexLocust</span><span class="p">(</span><span class="n">HttpLocust</span><span class="p">):</span>
+    <span class="n">task_set</span> <span class="o">=</span> <span class="n">UserAllTaskSet</span>
+    <span class="n">min_wait</span> <span class="o">=</span> <span class="mi">5000</span>
+    <span class="n">max_wait</span> <span class="o">=</span> <span class="mi">10000</span>
+    <span class="n">host</span> <span class="o">=</span> <span class="s1">'http://127.0.0.1:5000'</span></pre></div><div class="step step-level-1" step="20" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="32000" data-y="0" data-z="0"><h1 id="locust-master-slave">Locust Master/Slave</h1><p><a href="https://docs.locust.io/en/stable/running-locust-distributed.html">locust_distributed_run</a></p><p>To start locust in master mode:</p><pre class="highlight code sh">$ locust -f my_locustfile.py --master</pre><p>And then on each slave (replace 192.168.0.14 with IP of the master machine):</p><pre class="highlight code sh">$ locust -f my_locustfile.py --slave --master-host<span class="o">=</span><span class="m">192</span>.168.0.14</pre></div><div class="step step-level-1" step="21" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="33600" data-y="0" data-z="0"><h1 id="definicja-wlasnego-klient-a">Definicja w&#x142;asnego klient'a</h1><p><a href="https://docs.locust.io/en/stable/testing-other-systems.html">locust_testing_other_systems_using_custom_client</a></p><pre class="highlight code Python"><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">from</span> <span class="nn">locust</span> <span class="kn">import</span> <span class="n">Locust</span><span class="p">,</span> <span class="n">TaskSet</span><span class="p">,</span> <span class="n">events</span><span class="p">,</span> <span class="n">task</span>
+
+<span class="n">log</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">LoggingClient</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
+                <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">log</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">total_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+                <span class="n">events</span><span class="o">.</span><span class="n">request_failure</span><span class="o">.</span><span class="n">fire</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">response_time</span><span class="o">=</span><span class="n">total_time</span><span class="p">,</span> <span class="n">exception</span><span class="o">=</span><span class="n">e</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">total_time</span> <span class="o">=</span> <span class="nb">int</span><span class="p">((</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span>
+                <span class="n">events</span><span class="o">.</span><span class="n">request_success</span><span class="o">.</span><span class="n">fire</span><span class="p">(</span><span class="n">request_type</span><span class="o">=</span><span class="s2">"log"</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">response_time</span><span class="o">=</span><span class="n">total_time</span><span class="p">,</span> <span class="n">response_length</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">wrapper</span>
+
+
+<span class="k">class</span> <span class="nc">LoggingLocust</span><span class="p">(</span><span class="n">Locust</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">LoggingClient</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">ApiUser</span><span class="p">(</span><span class="n">LoggingLocust</span><span class="p">):</span>
+    <span class="n">min_wait</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">max_wait</span> <span class="o">=</span> <span class="mi">1000</span>
+
+    <span class="k">class</span> <span class="nc">task_set</span><span class="p">(</span><span class="n">TaskSet</span><span class="p">):</span>
+        <span class="nd">@task</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">error</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">"error info"</span><span class="p">)</span>
+
+        <span class="nd">@task</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+        <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">"Test Info"</span><span class="p">)</span></pre></div><div class="step step-level-1" step="22" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="35200" data-y="0" data-z="0"><img src="img/locust_own_log_client.gif"></img></div><div class="step step-level-1" step="23" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="36800" data-y="0" data-z="0"><h1 id="pull-request">pull request</h1><p><a href="https://github.com/locustio/locust/pull/993">Add_errors_grouping_for_dynamic_endpoint</a></p><img src="img/locust_pull_request.png"></img></div><div class="step step-level-1" step="24" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1" data-x="38400" data-y="0" data-z="0"><h1 id="pytania-i-odpowiedzi">Pytania i odpowiedzi</h1><p><a href="https://github.com/dduleba/locust-presentation">&#x17A;r&#xF3;d&#x142;a_prezentacji</a></p></div></div><div class="footer"><p>NOKIA</p></div><script type="text/javascript" src="js/impress.js"></script><script type="text/javascript" src="js/gotoSlide.js"></script><script type="text/javascript" src="js/hovercraft.js"></script></body></html>

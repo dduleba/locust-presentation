@@ -271,7 +271,8 @@ Docker z wykorzystaniem za pomocą exec'a
     $ docker build --tag dduleba/locust .
     # to mount examples/flaskr/ we need to chage directory
     $ cd ~/git/locust-presentation
-    $ docker run --cpus 1.0 --network host -d \
+    $ docker run --restart unless-stopped \
+        --network host -d \
         --name locustd -p 8089:8089 \
         --mount src="$(pwd)",target=/locust,type=bind dduleba/locust
 
@@ -550,7 +551,31 @@ Post request
 Uruchomienie locusta - docker exec
 ==================================
 
-* NOTE locustd container needs to be run once before docker exec
+Kontener locustd musi być uruchomiony tylko raz
+
+* montujemy źródła testów do katalogu /locust
+    * kontener zawiera PYTHONPATH do katalogu /locust
+    * daje to możliwość z korzystania z package'a w naszym przypadku examples
+
+.. code-block:: sh
+
+    $ cd ~/git/locust-presentation
+    $ docker run --restart unless-stopped \
+        --network host -d \
+        --name locustd -p 8089:8089 \
+        --mount src="$(pwd)",target=/locust,type=bind dduleba/locust
+
+Zatrzymanie poprzedniego run'u locust'a
+
+.. code-block:: sh
+
+    docker exec locustd pkill -f locust
+
+Uruchomienie locusta
+
+.. code-block:: sh
+
+    docker exec locustd locust -f examples/flaskr/user_all_actions/locustfile.py
 
 ----
 
@@ -638,6 +663,24 @@ Połączenie kilku requestów w całość
         max_wait = 10000
         host = 'http://127.0.0.1:5000'
 
+----
+
+Locust Master/Slave
+===================
+
+locust_distributed_run_
+
+To start locust in master mode:
+
+.. code-block:: sh
+
+    $ locust -f my_locustfile.py --master
+
+And then on each slave (replace 192.168.0.14 with IP of the master machine):
+
+.. code-block:: sh
+
+    $ locust -f my_locustfile.py --slave --master-host=192.168.0.14
 
 ----
 
@@ -731,6 +774,7 @@ Pytania i odpowiedzi
 .. _locust_docker: https://docs.locust.io/en/latest/running-locust-docker.html
 .. _locust_exporter: https://github.com/dduleba/locust_exporter
 .. _locust_dockprom: https://github.com/dduleba/locust-dockprom
+.. _locust_distributed_run: https://docs.locust.io/en/stable/running-locust-distributed.html
 .. _locust_testing_other_systems_using_custom_client: https://docs.locust.io/en/stable/testing-other-systems.html
 .. _prometheus: https://prometheus.io/
 .. _sjsi_sylabus: https://sjsi.org/download/3319/
