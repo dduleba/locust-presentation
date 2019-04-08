@@ -644,7 +644,7 @@ Połączenie kilku requestów w całość
 Definicja własnego klient'a
 ===========================
 
-locust_twoj_kilent_
+locust_testing_other_systems_using_custom_client_
 
 .. code-block:: Python
 
@@ -668,7 +668,7 @@ locust_twoj_kilent_
                     result = method(*args, **kwargs)
                 except Exception as e:
                     total_time = int((time.time() - start_time) * 1000)
-                    events.request_failure.fire(request_type="xmlrpc", name=name, response_time=total_time, exception=e)
+                    events.request_failure.fire(request_type="log", name=name, response_time=total_time, exception=e)
                 else:
                     total_time = int((time.time() - start_time) * 1000)
                     events.request_success.fire(request_type="log", name=name, response_time=total_time, response_length=0)
@@ -709,6 +709,14 @@ Add_errors_grouping_for_dynamic_endpoint_
 
 .. image:: img/locust_pull_request.png
 
+----
+
+Pytania i odpowiedzi
+====================
+
+źródła_prezentacji_
+
+
 .. _hovercraft: https://hovercraft.readthedocs.io/en/latest/presentations.html
 .. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.io/en/latest/
 .. _instalacji_locusta: https://docs.locust.io/en/latest/installation.html
@@ -723,7 +731,7 @@ Add_errors_grouping_for_dynamic_endpoint_
 .. _locust_docker: https://docs.locust.io/en/latest/running-locust-docker.html
 .. _locust_exporter: https://github.com/dduleba/locust_exporter
 .. _locust_dockprom: https://github.com/dduleba/locust-dockprom
-.. _locust_twoj_kilent: https://docs.locust.io/en/stable/testing-other-systems.html
+.. _locust_testing_other_systems_using_custom_client: https://docs.locust.io/en/stable/testing-other-systems.html
 .. _prometheus: https://prometheus.io/
 .. _sjsi_sylabus: https://sjsi.org/download/3319/
 .. _istqb_performance_testing: https://www.istqb.org/documents/ISTQB%20CTFL-PT%20Syllabus%202018%20GA.pdf
@@ -734,3 +742,4 @@ Add_errors_grouping_for_dynamic_endpoint_
 .. _running_docker_with_locust: https://docs.locust.io/en/latest/running-locust-docker.html
 .. _dariusz_duleba: https://www.linkedin.com/in/dariusz-duleba/
 .. _Add_errors_grouping_for_dynamic_endpoint: https://github.com/locustio/locust/pull/993
+.. _źródła_prezentacji: https://github.com/dduleba/locust-presentation
