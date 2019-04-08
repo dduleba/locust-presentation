@@ -1,3 +1,4 @@
+from examples.flaskr.posts_list.locustfile import IndexTaskSet
 from examples.flaskr.user_add_post.locustfile import UserAddPostTaskSet
 from examples.flaskr.user_delete_post.locustfile import UserDeletePostTaskSet
 from examples.flaskr.user_edit_post.locustfile import UserEditPostTaskSet
@@ -11,7 +12,8 @@ class UserAllTaskSet(TaskSet):
              UserAddPostTaskSet: 4,
              UserDeletePostTaskSet: 3,
              UserLoginTaskSet: 2,
-             UserRegisterTaskSet: 1}
+             UserRegisterTaskSet: 1,
+             IndexTaskSet: 8}
 
 
 class IndexLocust(HttpLocust):
