@@ -625,7 +625,6 @@ Task sequence
         def delete(self):
             if self.post_id is None:
                 return
-
             self.client.post(
                 '/{post_id}/delete'.format(post_id=self.post_id),
                 name='/[post_id]/delete'
@@ -693,7 +692,6 @@ And then on each slave (replace 192.168.0.14 with IP of the master machine):
 
 Definicja własnego klient'a
 ===========================
-
 locust_testing_other_systems_using_custom_client_
 
 .. code-block:: Python
@@ -706,9 +704,7 @@ locust_testing_other_systems_using_custom_client_
 
     log = logging.getLogger()
 
-
     class LoggingClient(object):
-
         def __getattr__(self, name):
             def wrapper(*args, **kwargs):
                 start_time = time.time()
@@ -727,7 +723,6 @@ locust_testing_other_systems_using_custom_client_
 
 
     class LoggingLocust(Locust):
-
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
             self.client = LoggingClient()

@@ -8,7 +8,6 @@ log = logging.getLogger()
 
 
 class LoggingClient(object):
-
     def __getattr__(self, name):
         def wrapper(*args, **kwargs):
             start_time = time.time()
@@ -27,7 +26,6 @@ class LoggingClient(object):
 
 
 class LoggingLocust(Locust):
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.client = LoggingClient()
