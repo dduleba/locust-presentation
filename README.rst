@@ -168,11 +168,11 @@ Narzędzia do testów wydajnościowych
 ================    =======
 Nazwa               Opis
 ================    =======
-Gatling_            Open sourceowe narzędzie do genorowania obciążenia.
+Gatling_            Open sourceowe narzędzie do generowania obciążenia.
 
-                    Potężne narzędzie z możliwością nagrywania rcuhu webowego z kolorowymi raportami.
+                    Potężne narzędzie z możliwością nagrywania ruchu webowego z kolorowymi raportami.
 
-locust_             Open sourceowe narzędzie do genorowania obciążenia.
+locust_             Open sourceowe narzędzie do generowania obciążenia.
 
                     Umożliwia definicje zachowania użytkownika
 
